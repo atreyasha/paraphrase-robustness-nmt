@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+#SBATCH --time=3-00:00:00
+#SBATCH --qos=vesta
+#SBATCH --partition=vesta
+#SBATCH --gres=gpu:Tesla-K80:1
+#SBATCH --mem=24G
+#SBATCH --ntasks=5
+#SBATCH --output=./slogs/slurm-%j.out
+module load vesta cuda/10.2
 # Copyright 2020 Google and DeepMind.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

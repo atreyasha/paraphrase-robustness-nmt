@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#SBATCH --time=01:00:00
+#SBATCH --partition=generic
+#SBATCH --mem=48G
+#SBATCH --ntasks=5
+#SBATCH --output=./slogs/slurm-%j.out
+module load generic
 # Average last N checkpoints from training directory
 set -e
 

@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#SBATCH --time=01:00:00
+#SBATCH --partition=generic
+#SBATCH --mem=16G
+#SBATCH --ntasks=20
+#SBATCH --output=./slogs/slurm-%j.out
+module load generic
 # Script sourced and adapted from https://github.com/pytorch/fairseq/blob/master/examples/scaling_nmt/README.md
 set -e
 

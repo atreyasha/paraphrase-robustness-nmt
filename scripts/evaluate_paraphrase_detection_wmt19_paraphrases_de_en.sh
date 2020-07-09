@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#SBATCH --time=01:00:00
+#SBATCH --partition=vesta
+#SBATCH --gres=gpu:Tesla-K80:1
+#SBATCH --mem=16G
+#SBATCH --ntasks=1
+#SBATCH --output=./slogs/slurm-%j.out
+module load vesta cuda/10.2
 # Script to evaluate WMT19 translations and paraphrases
 # using pre-trained paraphrase detection model(s)
 set -e

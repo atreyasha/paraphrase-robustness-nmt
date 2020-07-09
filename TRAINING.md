@@ -24,7 +24,7 @@ Optional arguments:
 To run this script, execute:
 
 ```shell
-bash scripts/preprocess_wmt16_de_en.sh
+sbatch scripts/preprocess_wmt16_de_en.sh
 ```
 
 **ii.** Train a large transformer model using `train_wmt16_de_en.sh`:
@@ -42,7 +42,7 @@ Optional arguments:
 Generally, any of the `fairseq` [architectures](<https://fairseq.readthedocs.io/en/latest/command_line_tools.html#Model configuration>) could be used as an argument for this script. To use our default settings based on experiments, simply execute:
 
 ```
-bash scripts/train_wmt16_de_en.sh
+sbatch scripts/train_wmt16_de_en.sh
 ```
 
 **iii.** In case training was discontinued and needs to be continued later on, use `train_continue_wmt16_de_en.sh`:
@@ -62,7 +62,7 @@ Required arguments:
 An example of running this script would be:
 
 ```shell
-bash scripts/train_continue_wmt16_de_en.sh \
+sbatch scripts/train_continue_wmt16_de_en.sh \
 "./models/transformer_vaswani_wmt_en_de_big.wmt16.de-en.1594228573"
 ```
 
@@ -84,7 +84,7 @@ Required arguments:
 An example of running this script would be:
 
 ```shell
-bash scripts/average_checkpoints_wmt16_de_en.sh \
+sbatch scripts/average_checkpoints_wmt16_de_en.sh \
 "./models/transformer_vaswani_wmt_en_de_big.wmt16.de-en.1594228573"
 ```
 
@@ -106,7 +106,7 @@ Required arguments:
 An example of running this script would be:
 
 ```shell
-bash scripts/evaluate_wmt16_de_en.sh \
+sbatch scripts/evaluate_wmt16_de_en.sh \
 "./models/transformer_vaswani_wmt_en_de_big.wmt16.de-en.1594228573/checkpoint_best.pt"
 ```
 
@@ -126,7 +126,7 @@ Required arguments:
 An example of running this script would be:
 
 ```shell
-bash scripts/evaluate_wmt19_de_en.sh \
+sbatch scripts/evaluate_wmt19_de_en.sh \
 "./models/transformer_vaswani_wmt_en_de_big.wmt16.de-en.1594228573/checkpoint_best.pt"
 ```
 
@@ -175,7 +175,7 @@ Optional arguments:
 Our script allows for fine-tuning using the three following language models: `bert-base-multilingual-cased`, `xlm-roberta-base` and `xlm-roberta-large`. In order to use our default settings, simply execute:
 
 ```shell
-bash scripts/train_evaluate_pawsx.sh
+sbatch scripts/train_evaluate_pawsx.sh
 ```
 
 This script will automatically evaluate the model against the `dev` set during training and the `test` set after training. Therefore a separate evaluation step is not necessary.

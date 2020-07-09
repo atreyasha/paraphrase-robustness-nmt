@@ -102,7 +102,7 @@ This script will generate translations using the SOTA FAIR-WMT19 and the non-SOT
 
 
 ```shell
-bash scripts/translate_wmt19_paraphrases_de_en.sh 
+sbatch scripts/translate_wmt19_paraphrases_de_en.sh 
 ```
 
 #### iii. Evaluation
@@ -146,7 +146,7 @@ Optional arguments:
 This script will analyze source and target sentences in the aforementioned `json` files and will append the paraphrase detection models' `softmax` scores for the paraphrase (or positive) label in-place. To run this script, simply execute:
 
 ```shell
-bash scripts/evaluate_paraphrase_detection_wmt19_paraphrases_de_en.sh
+sbatch scripts/evaluate_paraphrase_detection_wmt19_paraphrases_de_en.sh
 ```
 
 #### iv. Visualization

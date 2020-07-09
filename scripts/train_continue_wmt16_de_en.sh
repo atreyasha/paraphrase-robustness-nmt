@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=volta
+#SBATCH --gres=gpu:Tesla-V100:1
+#SBATCH --mem=24G
+#SBATCH --ntasks=5
+#SBATCH --output=./slogs/slurm-%j.out
+module load volta cuda/10.2
 # Script sourced and adapted from https://github.com/pytorch/fairseq/blob/master/examples/scaling_nmt/README.md
 set -e
 
